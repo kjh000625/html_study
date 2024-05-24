@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터</title>
+
+  <style>
+
+    /* 'body > *' = '꺽쇠 아스테리스크' 
+    = 선택자는 body의 모든 자식[자손 아님]
+    >는 자식 관계
+    *은 모든 요소*/
+
+    body > * {max-width: 500px; margin: auto;}
+    h1 {
+      font-size: 20pt;
+      font-weight: normal;
+      border: 2px dashed green;
+    }
+
+    h1::before {
+      content: "★";
+      color: pink
+    }
+
+    h1::after {content: "★"; color: blueviolet;}
+
+    h1:hover::after {color: red;}
+
+    p::before {
+      content: "라인컴퓨터 -";
+      color: blue;
+    }
+
+    p::after {
+      content: ".....";
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>가상선택자 연습중</h1>
+
+  <p>My name is Donald</p>
+  <p>I live in Ducksburg</p>
+
+</body>
+
+</html>
+
+
+
+<!-- hover를 ::after, befor 보다 먼저 적으면 적용 가능-->

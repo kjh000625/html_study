@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <style>
+        body {margin: 0%;} /* 화면 바깥 여백 없애기*/
+
+        #layout01 {max-width: 900px; margin: auto;} /* 최대 크기 900픽셀, 가운데 정렬*/
+        header {background: orange; padding: 20px; text-align: center; transition: 0.5s; /*font-family: "Jua", sans-serif; font-weight: 400; font-style: normal*/;}
+        header:hover {background: tomato;}
+        h1 { font-family: "Jua", sans-serif; font-weight: 400; font-style: normal;}
+        
+        #layout02 {display: flex; }
+        main      { flex: 2.5;} /* (section,article) : aside 화면 비율*/
+        main section {background: aqua; transition: 0.5s;padding: 20px;}
+        main section:hover {background: rgba(128, 255, 0, 0.5);}
+        main article {background: maroon; padding: 20px;}
+        main article:hover {background: rgba(128, 0, 0, 0.664);}
+        
+        aside     {background: rgba(0, 0, 0, 0.336); flex: 1; transition: 0.5s; padding: 20px;}
+       
+        aside:hover {background: linear-gradient(tomato,gold);}
+
+        nav ul      {display: flex; /*list-style-position: inside;*/ padding: 0%; max-width: 700px; margin: auto; padding: 20px 0 /* 20 0 20 0 으로 반복*/; list-style-type: none;
+             /*화면 줄어들면 메뉴가 밑으로 내려오기*/ flex-wrap: wrap; /*아이템이 센터에 오게끔->*/ justify-content: center;}
+        nav li      {/*flex: 1*/;text-align: center; transition: 0.5s; flex-basis: 135px;} /* flex-basis는 뭐지?*/
+        nav li:hover {transform: scale(1.5);} /* 마우스 갖다댔을 때 커지기*/
+        nav a       {color: black; text-decoration: none; transition: 0.5s;}
+       
+            /* 폰트*/
+        nav a     {font-family: "Hi Melody", sans-serif; font-weight: 400; font-style: normal;}
+        section p {font-family: "Song Myung", serif; font-weight: 100;  font-style: normal;}
+        article p {font-family: "East Sea Dokdo", sans-serif; font-weight: 400;  font-style: normal; }
+        aside p   {font-family: "Hi Melody", sans-serif;  font-weight: 400;  font-style: normal;}
+
+        footer {background: linear-gradient(orange,yellow); padding: 20px; text-align: center;font-family: "Hi Melody", sans-serif;  font-weight: 400;  font-style: normal;}
+        footer:hover {background: linear-gradient(yellow,orange);}
+
+        /* 작은기계장치의 대한 설정 (최대넓이 : 550px) 0~550까지 적용됨*/
+        @media (max-width:550px) {
+            #layout02 {flex-direction: column;} /*550이하일 때 밑으로 정렬*/
+            nav li:nth-child(4),
+            nav li:nth-child(5) {/*display: none; 화면 줄어들면 메뉴 4,5 없애기*/}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout01">
+        <header><h1>마크업 첫걸음</h1></header>
+        <nav>
+            <!--<ul>은 무조건 <li>만-->
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+        <div id="layout02">
+            <main>
+                <section>
+                    <h2>정보구역-1</h2>
+                    <p>대한민국은 통일을 지향하며, 자유민주적 기본질서에 입각한 평화적 통일 정책을 수립하고 이를 추진한다. 국가는 노인과 청소년의 복지향상을 위한 정책을 실시할 의무를 진다.</p>
+
+<p>비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.</p>
+
+<p>헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다.</p>
+
+
+                </section>
+                <article>
+                    <h2>정보구역-2</h2>
+                    <p>공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다. 국가안전보장에 관련되는 대외정책·군사정책과 국내정책의 수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에 응하기 위하여 국가안전보장회의를 둔다.</p>
+                </article>
+            </main>
+            <aside><h3>부가정보</h3>
+                <p>국무총리는 국회의 동의를 얻어 대통령이 임명한다. 국가안전보장에 관련되는 대외정책·군사정책과 국내정책의 수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에 응하기 위하여 국가안전보장회의를 둔다.</p>
+            </aside>
+        </div>
+        <footer>하단정보</footer>
+    </div>
+</body>
+</html>

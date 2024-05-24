@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8교시 미션-1</title>
+    <style>
+        #layout {
+            /*height:700px;*/
+            height: 70vh;
+            /*max-width: 900px;*/
+            /*900보다 넓어지지 않는다*/
+            max-width: 80vw;
+            background-color: cadetblue;
+            margin: auto;
+            /*margin-top: 15vh;*/
+            border: 5px solid red;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        #layout form {
+            max-width: 270px;
+
+        }
+
+        /*margin 안먹히면 inline -> block으로 바꿔줘야함*/
+        form [type="submit"] {
+            display: block;
+            margin: auto;
+        }
+
+        #layout {
+            display: flex;
+        }
+
+        #layout2 {border: 2px solid yellow; flex-basis: 250px;box-sizing: border-box; }
+        main {border: 2px solid yellow; flex-basis: 250px;box-sizing: border-box; }
+
+        /*footer {border: 2px solid black;
+                height: 100px;
+                padding: 50px;
+                width: 500px;
+                box-sizing: border-box;
+        }*/
+
+        /* 작은 기계장치*/
+        @media (max-width:500px) {
+            #layout {flex-direction: column;}
+            #layout > * {width: 100%;}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        
+        <div id="layout2">
+            <h2>이름입력</h2>
+            <form action="#">
+                <label for="aaa">Last name: </label>
+                <input type="text" id="aaa" name="fname" placeholder="홍"><br>
+                <label for="bbb">First name:</label>
+                <input type="text" id="bbb" name="lname" placeholder="길동"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <main>
+            <h2>이메일 수신동의</h2>
+            <form action="#">
+                <input type="radio" id="yes" name="e">
+                <!--name="??"를 두 input에 넣어주면 하나만 선택 가능 - 꼭 같은 이름을 써야지 한 그룹으로 만들어짐-->
+                <label for="yes">예</label><br>
+                <input type="radio" id="no" name="e">
+                <label for="no">아니오</label>
+                <input type="submit" value="확인">
+            </form>
+            <input type="checkbox" name="hobby" value="m"> 등산 <br>
+            <input type="checkbox" name="hobby" value="f"> 낚시 <br>
+            <input type="checkbox" name="hobby" value="v"> 영화감상 <br>
+            <input type="color"><br>
+            <input type="date"><br>
+            <input type="email"><br>
+            <input type="file"><br>
+            <input type="hidden"><br>
+            <input type="image" src="images/button.png"><br>
+            <input type="number" min="23" max="35"><br>
+            <input type="range" min="0" max="10"><br>
+            <input type="search"><br>
+            <input type="reset"><br>
+            <input type="tel"><br>
+
+        </main>
+
+    </div>
+   <!--<footer>
+        <h2>하단정보</h2>
+    </footer>-->
+</body>
+
+</html>

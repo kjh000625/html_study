@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 태그 연습하기</title>
+</head>
+<style>
+    img {
+        max-width: 100%;
+    }
+
+    #layout1 {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    header {
+        background: rgba(122, 184, 255, 0.548);
+        padding: 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav {
+        height: 300px;
+        background: radial-gradient(circle,lightgreen 10%, chocolate 70%, skyblue 80%);
+        margin: 10px auto;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+
+    nav:hover {
+        background: radial-gradient(circle, tomato 5%, lightgreen 60%, rgba(255, 127, 80, 0.39) 80%);
+    }
+
+
+    #layout2 {
+        display: flex;
+    }
+
+    #layout2 p {
+        margin: 0;
+    }
+
+    /*모든 p의 첫글자 커지기*/
+    #layout2 p::first-letter {
+        font-size: 2rem;
+        background: rgba(0, 0, 255, 0.3);
+        border-radius: 20px;
+        padding: 0 10px;
+    }
+
+    #layout2 p:hover::first-letter {
+        background: rgba(0, 0, 255, 0.425);
+    }
+
+    main {
+        background: rgba(128, 255, 0, 0.363);
+        padding: 20px;
+        flex: 2;
+    }
+
+    /*main p:hover {background-color: bisque;} */
+
+
+
+    main h2 {
+        margin: 0;
+    }
+
+    aside {
+        background: rgba(95, 158, 160, 0.397);
+        padding: 20px;
+        flex: 1;
+    }
+
+    aside h3 {
+        margin: 0;
+    }
+
+    footer {
+        background-color: rgba(210, 183, 30, 0.39);
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer h3 {
+        margin: 0;
+    }
+
+    /*폼 태그 부분*/
+    form {
+        max-width: 230px;
+        margin: auto;
+        margin-right: 0;
+        display: flex;
+        /*lign-items: center ;*/
+    }
+
+    form input {
+        display: block;
+    }
+
+    /* {flex:1;}을 하면 특정자식의 넓이만 유독 넓어진다.
+    다른 자식들은 좁은 채 그대로 있다.
+    flex:1 의 개념은 부모 영역에서 남은 영역 모두를 할당 받는다
+    =flex-grow:1; 라고 한다*/
+    form div {
+        flex: 1;
+    }
+
+    form div input {
+        width: 170px;
+        background-color: paleturquoise;
+        border-radius: 5px;
+        border: 1px solid #bbb;
+        text-align: center;
+    }
+
+    form div input:hover {
+        transform: scale(1.1);
+    }
+
+    [type="text"] {
+        margin-bottom: 7px;
+    }
+
+    [type="submit"] {
+        background-color: rgba(135, 255, 80, 0.548);
+        border-radius: 10px;
+        border: 1px solid #bbb;
+        cursor: pointer;
+    }
+
+    [type="submit"]:hover {
+        transform: scale(1.2);
+    }
+
+
+    @media (max-width: 550px) {
+        #layout2 {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<body>
+    <div id="layout1">
+        <header>
+            <h1>상단</h1>
+            <form action="#" method="post">
+                <div>
+                    <input type="text" placeholder="ID">
+                    <input type="password" placeholder="Password">
+                </div>
+                <!--서버와 교류=submit-->
+                <input type="submit" value="확인" ;>
+            </form>
+        </header>
+        <nav></nav>
+        <div id="layout2">
+            <main>
+                <h2>메인영역</h2>
+                <p>국민경제의 발전을 위한 중요정책의 수립에 관하여 대통령의 자문에 응하기 위하여 국민경제자문회의를 둘 수 있다. 제2항과 제3항의 처분에 대하여는 법원에 제소할 수 없다.</p>
+
+                <p>누구든지 병역의무의 이행으로 인하여 불이익한 처우를 받지 아니한다. 예비비는 총액으로 국회의 의결을 얻어야 한다. 예비비의 지출은 차기국회의 승인을 얻어야 한다.</p>
+
+                <p>나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히
+                    선서합니다.</p>
+
+                <p>국무위원은 국무총리의 제청으로 대통령이 임명한다. 모든 국민은 종교의 자유를 가진다. 국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다.</p>
+            </main>
+            <aside>
+                <h3>부가영역</h3>
+                <p>모든 국민은 주거의 자유를 침해받지 아니한다. 주거에 대한 압수나 수색을 할 때에는 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 국회의원은 법률이 정하는 직을 겸할
+                    수 없다.</p>
+
+                <p>모든 국민은 소급입법에 의하여 참정권의 제한을 받거나 재산권을 박탈당하지 아니한다. 여자의 근로는 특별한 보호를 받으며, 고용·임금 및 근로조건에 있어서 부당한 차별을 받지
+                    아니한다.</p>
+            </aside>
+        </div>
+        <footer>
+            <h3>하단</h3>
+            <img src="images/summer.jpg" alt="여름" ;>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+<!--
+em과 rem
+1. 2em = 기준 부모요소의 크기의 2배
+2. 2rem = body 기준 폰트크기의 2배
+ (body에 특별하게 설정된 값이 없다면, 렌더링 브라우저에 설정된 기본 폰트크기의 2배)
+-->
+
+<!--
+    선택자:: 가상선택자에서 
+    콜론을 하나만 찍는 경우 : (태그전체에 효과적용)
+    콜론을 두 번 찍는 경우 :  (태그 일부분에 효과적용) = hover 안됨
+-->
+
+<!--
+    ::before = 해당 요소의 일부분(앞부분)에 텍스트가 입력
+    ::after = 뒷부분에 텍스트 추가
+-->
+
+<!-- h1은 검색 필터링에서 제일 중요함 -->
+
+<!-- nav는 사각형 -->
+
+<!--input은 가로방향으로 가니까 인라인 레벨-->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang ='ko'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Page Layout</title>
+<style>
+ * {padding:0; margin:0; }
+    html,body {font:9pt 나눔고딕;}
+    body    {max-width: 900px; margin: auto; border: 3px dashed red;}
+    h1,h2 {font-size:1rem;} 
+    main h1 {display:none;}
+
+    header {height:50pt; background:skyblue; transition: 0.5s;}
+    header:hover {background: aqua; }
+
+    section {height:200pt; background:linear-gradient( -30deg, tomato,gold); transition: 1s;}
+    section:hover {background: lawngreen; transform: rotate(3deg);}
+    /* section: hover h2 = hover 다음 한칸 띄면 자손이라는 의미*/
+    section:hover h2{display: none;}
+
+    article {height:100pt; background:orange; transition: 0.5s;}
+    article:hover h2{display: none;}
+    article:hover {background: rgba(255, 255, 255, 0); }
+
+    aside {height:50pt; background:gray; transition: 0.5s;}
+    aside:hover {background: linear-gradient(gray,white); transform: rotate(3deg);}
+
+    footer {height:30pt; background:brown; transition: 0.5s;}
+    footer:hover {background: rgb(255, 174, 127); }
+
+    /* b태그는 블록요소 아님 //인라인 레벨 엘리먼트*/
+    b   {color: red; font-weight: normal; border: 1px dotted blue; padding: 20px; border-radius: 10px; background: rgba(255, 255, 0, 0.5); display: inline-block; transition: 0.5s;}
+    /* 인라인 요소에 transform 기능 부과하려면 인라인 성질 유지한채 블록지정 = inline-block*/
+    b:hover {transform: rotate(15deg);}
+
+@media (min-width:600pt) {
+ #main_aside {display:flex; height:300pt; border:2px dashed blue;} 
+ main {flex-grow:3; } 
+ aside { flex-grow:1; height:100%;}
+}
+</style>
+</head>
+<body>
+    <header><h1>상단</h1></header>
+    <!--id부여하면 ?-->
+    <div id="main_aside">
+        <main><h1>메인영역</h1>
+        <section><h2>일반<b>정보</b></h2></section>
+        <article><h2>기사<b>정보</b></h2></article>
+        </main>
+        <aside><h2>부가<b>정보</b></h2></aside>
+    </div>
+        <footer><h1>하단</h1></footer>
+</body>
+</html>

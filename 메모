@@ -1,0 +1,4 @@
+20vw면 viewport 넓이의 20퍼센트
+10vh면 viewport 높이의 20퍼센트
+
+{min-height: ??px} 정보가 많아지는 건 ㄱㅊ, 너무 없으면 높이를 ??으로 맞춰
