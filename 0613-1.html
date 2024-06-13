@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 공부하기</title>
+</head>
+<body>
+    <h1>배열에 대하여</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script>
+        const $p  = document.querySelectorAll('p'); //[0,1,2] 
+        let n1 = [8,4,5,12,20];
+        let n2 = Math.max (...n1); //최대값 찾기와 ...연산자 (전개연산자 Spread Operators)
+        //alert(n2); //출력 20
+        $p[0].innerText = n2;
+        let f1 = ['딸기', '사과', '바나나'];
+        let f2 = [...f1];
+        //alert(f2 + '\n' + f1); // '\n' = 윈도우 명령
+        f2.push('체리');
+        f2.unshift('키위');
+        let f3 = [...f2, '수박']; //f2 값을 복제한 후 새로운 값을 추가한다.
+        let f4 = ['포도', ...f3];
+        $p[1].innerText = f4; 
+
+    </script>
+</body>
+</html>

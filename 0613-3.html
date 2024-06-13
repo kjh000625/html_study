@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전개연산자(spread)와 이미지배열</title>
+    <style>
+        h1 {
+            text-align: center;
+            text-shadow: 2px 2px 2px darkcyan;
+        }
+        #imgbox {
+            max-width: 650px;
+            margin: auto;
+            border: 5px dashed darkgreen;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        #imgbox img {
+            width: 200px;
+        }
+        div {
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>전개연산자를 사용한 이미지배열</h1>
+    <section id="imgbox">
+        <!--이곳에 이미지배열이 들어감.-->
+    </section>
+    <div>
+        <button type="button">짝수</button>
+        <button type="button">홀수</button>
+        <button type="button">모두보이기</button>
+    </div>
+
+    <script>
+        let box = document.querySelector('#imgbox');
+
+        //이미지 경로를 각각의 배열에 값으로 넣어둠
+        const x = ["images/1.jpg", "images/2.jpg"];
+        const y = ["images/3.jpg", "images/4.jpg"];
+        const z = ["images/5.jpg", "images/6.jpg"];
+
+        //전개 연산자(spread)를 사용하여 이미지 경로를 병합함
+        const xyz = [...x,...y,...z];
+
+        xyz.forEach ( i => {
+            box.innerHTML += `<img src = ${i} alt= '이미지'>`
+        });
+
+        const $img = document.querySelectorAll("img"); // nodeList 라는 것은 여러요소들 즉 배열이란 뜻.
+        //alert ( $img[2].getAttribute('src')); //images/3.jpg
+
+        
+        $img.forEach( (i,j) => { //i는 값(글자), j는 인덱스번호 [0,1,2...]
+            if ( j %2 != 0) //짝수라면 
+            {i.classList.add('c');} //class 명을 'c'로 추가하고
+            else { //아니면 's'추가해라
+            i.classList.add('s');}
+        });
+
+        //(짝수만 보이기)를 클릭하면 짝수 이미지만 보인다
+        const $button = document.querySelectorAll('button'); //[0,1]
+        $button[0].addEventListener("click", () => zzak());
+        $button[1].addEventListener("click", () => hol());
+        $button[2].addEventListener("click", () => all());
+        zzak = () => {
+            $img.forEach ( i => {
+                if( i.classList.contains('s')) {
+                    i.style.display = 'none';
+                } else {
+                    i.style.display = 'block';
+                }
+            })
+        };
+        hol = () => {
+            $img.forEach ( i => {
+                if( i.classList.contains('c')) {
+                    i.style.display = 'none';
+                } else {
+                    i.style.display = 'block';
+                }
+            })
+        };
+        all = () =>  $img.forEach(i => {
+        i.style.display = 'block';
+    });
+    </script>
+</body>
+</html>
