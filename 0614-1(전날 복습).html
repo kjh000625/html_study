@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>값 입력 받아서 저장하기</title>
+    <style>
+        [id="unit"] {width:100px;}
+        [id="count"] {width: 60px;}
+    </style>
+</head>
+<body>
+    <h1>계산하기</h1>
+    <form action="#" method="get"></form>
+        <label for = "unit">단가</label>
+        <input type="number" maxlength="5" id="unit">
+        *
+        <label for = "count">개수</label>
+        <input type="number" maxlength="5" id="count">
+        =
+        <input type="number" maxlength="5" id="result" readonly>
+    </form>
+
+    <script>
+        const $input = document.querySelectorAll('input'); //[0,1,2]
+
+        //글자 입력 후 제한하기
+        $input.forEach( ccc => {
+            ccc.addEventListener('input', () => {
+            if (ccc.value.length > 5 && ccc.id == "unit"
+            /*지금 글상자의 글자수 > 5 && 이 글상자의 id가 unit*/) {
+                ccc.value= '';
+            } else if (ccc.value.length> 3 && ccc.id == "count") {
+                    ccc.value = '';
+                }
+            });
+        });
+
+
+        //글 입력 감지해서 입력 숫자를 계산
+        $input[1].addEventListener ('keypress', (e) => y(e));
+        y = e => {
+            if (e.key === 'Enter') {
+                const x = $input[0].value * $input[1].value;
+            $input[2].value = x;
+        }
+            
+        }; 
+    </script>
+</body>
+</html>

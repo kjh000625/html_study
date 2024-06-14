@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차례대로 이미지 서서히 나타나기</title>
+    <style>
+        #layout {
+            width: 600px;
+            height: 800px;
+            margin: auto;
+            border-top: 10px solid darkblue;
+            border-bottom: 10px solid darkblue;
+            position: relative;
+        }
+        img {
+            width: 600px;
+            height: 800px;
+            left: 0;
+            opacity: 0;
+            transition: 1s;
+        }
+        .show {
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="layout">
+        <h1>차례대로 이미지 나타나기</h1>
+        <!--배열방법으로 이미지 표시하기-->
+    </section>
+
+    <script>
+        //이미지 경로 배열
+        const x = ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg'];
+
+        //이미지를 담을 <section>요소를 가져옴
+        const z = document.querySelector('#layout');
+
+        //이미지요소를 생성하여 차례대로 보여지게 함
+        window.addEventListener('load', () => y());
+
+        y = () => {
+            x.forEach((j,i) => { //j는 각 이미지경로, i는 해당하는 index
+                //새 이미지 요소 생성
+                const m = document.createElement('img'); //<img> 태그 생김
+                m.src = j; // <img src="images/1.jpg">~~~
+                m.alt = "번호이미지"; // <img src="images/1.jpg" alt= "번호이미지">~~~
+                m.classList.add('show');
+
+                //이미지가 차례대로 보여지도록 opacity 재정의
+                setTimeout (() => {
+                    m.style.opacity = "1";
+                }, i * 1000); //0*1000= 0초후, 1 * 1000 = 1초후, 2 * 1000 = 2초후...하나씩 나타난다.
+
+                //이미지가 표시 된 후 1초후 삭제된다.
+                setTimeout (() => {
+                    m.style.opacity = "0";
+                    setTimeout(()=> {
+                        m.remove(); //요소가 삭제된다.
+                    }, 1000);
+                },i * 1000);
+
+                //이미지를 <section>에 추가
+                z.appendChild (m);
+            });
+        }
+    </script>
+</body>
+</html>
